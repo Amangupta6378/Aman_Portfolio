@@ -26,8 +26,8 @@ const Experience = () => {
         {experiences.map((experience, index) => (
           <div
             key={experience.id}
-            className={`flex flex-col sm:flex-row items-center mb-16 ${
-              index % 2 === 0 ? "sm:justify-end" : "sm:justify-start"
+            className={`flex flex-col sm:flex-row items-center mb-16 relative ${
+              index % 2 === 0 ? "sm:flex-row" : "sm:flex-row-reverse"
             }`}
           >
             {/* Timeline Circle */}
@@ -42,8 +42,8 @@ const Experience = () => {
             {/* Content Section */}
             <div
               className={`w-full sm:max-w-md p-4 sm:p-8 rounded-2xl shadow-2xl border border-white bg-gray-900 backdrop-blur-md shadow-[0_0_20px_1px_rgba(130,69,236,0.3)] ${
-                index % 2 === 0 ? "sm:ml-0" : "sm:mr-0"
-              } sm:ml-44 sm:mr-44 ml-8 transform transition-transform duration-300 hover:scale-105`}
+                index % 2 === 0 ? "sm:mr-[50%] sm:pr-16" : "sm:ml-[50%] sm:pl-16"
+              } ml-8 transform transition-transform duration-300 hover:scale-105`}
             >
               {/* Flex container for image and text */}
               <div className="flex items-center space-x-6">

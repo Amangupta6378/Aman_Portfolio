@@ -9,13 +9,19 @@ const Contact = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
-
+    
     emailjs
-      .sendForm(
-        "service_axbtt7a",  // Replace with your EmailJS Service ID
-        "template_1ziboq3",  // Replace with your EmailJS Template ID
-        form.current,
-        "Rz7W9pVF0HdDryNNL"  // Replace with your EmailJS Public Key
+      .send(
+        "service_z33ajon",
+        "template_yrcfak7",
+        {
+          to_email: "guptaaman6378@gmail.com",
+          from_name: form.current.user_name.value,
+          from_email: form.current.user_email.value,
+          subject: form.current.subject.value,
+          message: form.current.message.value,
+        },
+        "sIMyyS52ST__B7eaF"
       )
       .then(
         () => {
